@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Item;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -26,7 +27,14 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+
+    return Inertia::render('Dashboard')
+        ->with(
+            'items',
+            Item::whereUserId(auth()->user()->id)
+                ->get()
+        );
+
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
