@@ -3,8 +3,8 @@
 For the irregular tasks that you don't want to get away from you.
 
 ## Stack
-- [Laravel](https://laravel.com).
-- [Inertia](https://inertiajs.com/).
+- [Laravel](https://laravel.com)
+- [Inertia](https://inertiajs.com/)
 - React
 - Tailwind CSS
 
